@@ -40,7 +40,25 @@
           default = self.packages.${system}.blincus;
           ${pname} = generateRunnablePackage {
             name = "${pname}";
-            dependencies = with pkgs; [incus jq xorg.xhost coreutils gnugrep gnused getent util-linux dconf coreutils-full];
+            dependencies = with pkgs; [
+              incus
+              jq
+              xhost # X11 host access control (renamed from xorg.xhost)
+              coreutils
+              gnugrep
+              gnused
+              getent
+              util-linux
+              dconf
+              coreutils-full
+              # Wayland support
+              wayland
+              wayland-protocols
+              wayland-utils
+              # PipeWire audio support
+              pipewire
+              wireplumber
+            ];
           };
           install = generateRunnablePackage {
             name = "install";
