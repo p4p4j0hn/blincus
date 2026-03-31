@@ -61,11 +61,11 @@ The Blincus configuration file is located at `~/.config/blincus/config.ini`. It 
 
 ```ini
 [ubuntu]
-image = images:ubuntu/jammy/cloud
+image = images:ubuntu/noble/cloud
 scripts = ubuntu
 
 [ubuntux]
-image = images:ubuntu/jammy/cloud
+image = images:ubuntu/noble/cloud
 scripts = ubuntu
 ```
 
@@ -101,8 +101,8 @@ Collectively, a base image, one or more `profiles`, and a `cloud-init` are a `te
 
 ```ini
 [ubuntu]
-description = Ubuntu Jammy + cloud
-image = images:ubuntu/jammy/cloud
+description = Ubuntu Noble + cloud
+image = images:ubuntu/noble/cloud
 scripts = ubuntu
 ```
 
@@ -110,11 +110,11 @@ This template does not specify `profiles` or `cloud-init`, so Blincus will use t
 
 ```ini
 default_cloud-init = debian
-default_container_image = images:ubuntu/mantic/cloud
+default_container_image = images:ubuntu/noble/cloud
 default_container_profiles = container,idmap
 default_home-mounts = Documents,projects
 default_scripts = ubuntu
-default_vm_image = images:ubuntu/mantic/cloud
+default_vm_image = images:ubuntu/noble/cloud
 default_vm_profiles = idmap,vmkeys
 ```
 

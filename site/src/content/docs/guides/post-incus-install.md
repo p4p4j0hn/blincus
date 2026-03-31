@@ -36,7 +36,7 @@ echo "root:1000:1" | sudo tee -a /etc/subuid /etc/subgid
 Before running `blincus`, make sure Incus is ready. Start a container:
 
 ```bash
-incus launch images:ubuntu/22.04 mytest 
+incus launch images:ubuntu/24.04 mytest 
 ```
 
 If the launch succeeds, make sure your instance has a network connection. You can run `incus ls` to see a list of running instances and basic information about them.

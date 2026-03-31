@@ -19,12 +19,12 @@ The `launch` command also requires a flag specifying the template you want to us
 ```
 > blincus template list
 ubuntu:
-Ubuntu Jammy + cloud
-Image: images:ubuntu/jammy/cloud
+Ubuntu Noble + cloud
+Image: images:ubuntu/noble/cloud
 
 ubuntux:
-Ubuntu Jammy cloud + x
-Image: images:ubuntu/jammy/cloud
+Ubuntu Noble cloud + x
+Image: images:ubuntu/noble/cloud
 ```
 
 Pick one to test and launch it.
@@ -57,7 +57,7 @@ See "man sudo_root" for details.
 
  * Blincus instance: myfirst
  * Template: ubuntu
- * Image: images:ubuntu/jammy/cloud
+ * Image: images:ubuntu/noble/cloud
  * Host Mounts: Host <-> Instance
    - /home/bjk/.config/blincus/scripts/ubuntu <-> /opt/scripts
    - /home/bjk <-> /home/bjk/host/
@@ -77,18 +77,18 @@ You're in a shell inside your running instance. To prove it to yourself, try run
 The output should match the template you specified in the launch command.
 
 ```bash
-PRETTY_NAME="Ubuntu 22.04.3 LTS"
+PRETTY_NAME="Ubuntu 24.04.4 LTS"
 NAME="Ubuntu"
-VERSION_ID="22.04"
-VERSION="22.04.3 LTS (Jammy Jellyfish)"
-VERSION_CODENAME=jammy
+VERSION_ID="24.04"
+VERSION="24.04.4 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
 ID=ubuntu
 ID_LIKE=debian
 HOME_URL="https://www.ubuntu.com/"
 SUPPORT_URL="https://help.ubuntu.com/"
 BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
 PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
-UBUNTU_CODENAME=jammy
+UBUNTU_CODENAME=noble
 
 ```
 
