@@ -1,0 +1,50 @@
+{
+  "agent": {
+    "coder": {
+      "model": "opencode/claude-sonnet-4",
+      "temperature": 0.2,
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      },
+      "mode": "primary",
+      "options": {},
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "researcher": {
+      "model": "opencode/big-pickle",
+      "temperature": 0.8,
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      },
+      "mode": "subagent",
+      "options": {},
+      "permission": {
+        "edit": "deny",
+        "bash": "deny"
+      }
+    },
+    "debugger": {
+      "model": "opencode/gpt-5.1-codex-mini",
+      "temperature": 0.3,
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      },
+      "mode": "subagent",
+      "options": {},
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    }
+  },
+  "$schema": "https://opencode.ai/config.json"
+}
