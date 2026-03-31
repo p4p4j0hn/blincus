@@ -1,0 +1,26 @@
+devices:
+  mygpu:
+    gid: "44"
+    type: gpu
+  wayland-socket:
+    path: /mnt/.container_wayland_socket
+    source: /run/user/1000/wayland-0
+    type: disk
+  pipewire-socket:
+    path: /mnt/.container_pipewire_socket
+    source: /run/user/1000/pipewire-0
+    type: disk
+  pipewire-pulse-socket:
+    path: /mnt/.container_pipewire_pulse_socket
+    source: /run/user/1000/pulse/native
+    type: disk
+  wireplumber-socket:
+    path: /mnt/.container_wireplumber_socket
+    source: /run/user/1000/wireplumber-0
+    type: disk
+  xdg-runtime:
+    path: /run/user/1000
+    source: /run/user/1000
+    type: disk
+    readonly: false
+description: "Devices for Wayland and PipeWire Sharing"

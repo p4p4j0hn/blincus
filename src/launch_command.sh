@@ -162,9 +162,11 @@ done
 echo " " >>$TMPFILE
 incus file push $TMPFILE "$name"/etc/blincus
 
-if [[ ! -z "${DISPLAY}" ]]; then
-	echo "$(yellow Allowing X sharing:)"
-	xhost +
-fi
+# Setup display and audio forwarding based on detected environment
+source "${cfgdir}/lib/display.sh"
+
+setup_display_forwarding
+setup_audio_forwarding
+
 echo "$(green_bold Instance $name ready)"
 echo "Run $(magenta_bold blincus shell $name) to enter"
