@@ -30,10 +30,23 @@
               then [(wrapScript name)] ++ dependencies
               else [(wrapScript name)];
             buildInputs = [pkgs.makeWrapper];
-            postBuild =
-              if name == pname
-              then "wrapProgram $out/bin/${name} --prefix PATH : $out/bin"
-              else "wrapProgram $out/bin/${name} --prefix PATH : $out/bin/${pname}-${name}";
+            postBuild = ''
+              ${
+                if name == pname
+                then "wrapProgram $out/bin/${name} --prefix PATH : $out/bin"
+                else "wrapProgram $out/bin/${name} --prefix PATH : $out/bin/${pname}-${name}"
+              }
+
+              # Install bash completions for the main blincus package
+              ${
+                if name == pname
+                then ''
+                  mkdir -p $out/share/bash-completion/completions
+                  cp ${./completions.bash} $out/share/bash-completion/completions/${name}
+                ''
+                else ""
+              }
+            '';
           };
       in {
         packages = {
